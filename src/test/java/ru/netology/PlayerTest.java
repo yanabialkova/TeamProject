@@ -15,10 +15,15 @@ public class PlayerTest {
         player.installGame(game);
         player.play(game, 3);
 
+
+        int expected = 0;
+
         int expected = 3;
+
         int actual = player.sumGenre(game.getGenre());
         assertEquals(expected, actual);
     }
+
 
     @Test
     public void shouldGetException() {
@@ -107,6 +112,36 @@ public class PlayerTest {
         String expected = "Нетология Баттл Онлайн";
         String actual = player.mostPlayerByGenre("Аркады");
 
+
+    @Test
+    public void shouldShowMostPlayerByGenre() {
+
+        GameStore store = new GameStore();
+        Game game = store.publishGame("Нетология Баттл Онлайн", "Аркады");
+        Game game1 = store.publishGame("Нетология Баттл Локально", "Стратегия");
+        Game game2 = store.publishGame("Нетология Баттл", "Карточная игры");
+
+        Player player = new Player("Petya");
+
+        Game expected = null;
+        Game actual = player.mostPlayerByGenre(game.getGenre());
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldHoursOfPlayer() {
+
+        Player player = new Player("Petya");
+
+        GameStore store = new GameStore();
+        Game game = store.publishGame("Нетология Баттл Онлайн", "Аркады");
+
+        player.sumGenre(game.getGenre());
+
+        int expected = 0;
+        int actual = player.play(game,player.sumGenre(game.getGenre()));
+
         assertEquals(expected, actual);
     }
 
@@ -156,4 +191,15 @@ public class PlayerTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void shouldGetNameOfPlayer() {
+
+        Player player = new Player("Petya");
+
+        String expected = "Petya";
+        String actual = player.getName();
+
+        assertEquals(expected, actual);
+    }
 }
+

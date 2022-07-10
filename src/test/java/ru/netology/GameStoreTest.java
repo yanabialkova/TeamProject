@@ -1,6 +1,7 @@
 package ru.netology;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.Test;
 
 public class GameStoreTest {
@@ -44,6 +45,7 @@ public class GameStoreTest {
 
         assertEquals(expected, actual);
     }
+
     @Test
     public void shouldGetNotMostPlayerWithNullValue() {
         GameStore store = new GameStore();
@@ -88,9 +90,9 @@ public class GameStoreTest {
     public void shouldTestGameTitle() {
         GameStore store = new GameStore();
 
-        Game game1 = new Game("asd", "1", store);
-        Game game2 = new Game("asd", "1", store);
-        Game game3 = new Game("qwe", "1", store);
+        Game game1 = new Game("Нетология Баттл Онлайн", "Аркады", store);
+        Game game2 = new Game("Нетология Баттл Онлайн", "Аркады", store);
+        Game game3 = new Game("World of Tanks", "Аркады", store);
 
         assertEquals(true, game1.equals(game2));
         assertEquals(false, game1.equals(game3));
@@ -100,9 +102,9 @@ public class GameStoreTest {
     public void shouldTestGameGenre() {
         GameStore store = new GameStore();
 
-        Game game1 = new Game("asd", "1", store);
-        Game game2 = new Game("asd", "1", store);
-        Game game3 = new Game("asd", "2", store);
+        Game game1 = new Game("World of Tanks", "Аркады", store);
+        Game game2 = new Game("World of Tanks", "Аркады", store);
+        Game game3 = new Game("Tetris", "Головоломки", store);
 
         assertEquals(true, game1.equals(game2));
         assertEquals(false, game1.equals(game3));
@@ -113,9 +115,9 @@ public class GameStoreTest {
         GameStore store1 = new GameStore();
         GameStore store2 = new GameStore();
 
-        Game game1 = new Game("asd", "1", store1);
-        Game game2 = new Game("asd", "1", store1);
-        Game game3 = new Game("asd", "1", store2);
+        Game game1 = new Game("Нетология Баттл Онлайн", "Аркады", store1);
+        Game game2 = new Game("Нетология Баттл Онлайн", "Аркады", store1);
+        Game game3 = new Game("Double Dragon", "Аркады", store2);
 
         assertEquals(true, game1.equals(game2));
         assertEquals(false, game1.equals(game3));
@@ -125,7 +127,7 @@ public class GameStoreTest {
     public void shouldClassTypeNotEqual() {
         GameStore store = new GameStore();
 
-        Game game1 = new Game("asd", "1", store);
+        Game game1 = new Game("Нетология Баттл Онлайн", "Аркады", store);
         String string = "";
 
         boolean actual = game1.equals(string);

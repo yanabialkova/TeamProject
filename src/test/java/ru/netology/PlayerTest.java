@@ -1,6 +1,7 @@
 package ru.netology;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.Test;
 
 public class PlayerTest {
@@ -51,6 +52,29 @@ public class PlayerTest {
 
         int expected = 0;
         int actual = player.sumGenre(game.getGenre());
+
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void shouldGetSumGenreWhenGenreNotFound() {
+        GameStore store = new GameStore();
+
+        Game game1 = store.publishGame("Нетология Баттл Онлайн", "Аркады");
+        Game game2 = store.publishGame("World of Tanks", "Аркады");
+
+        Player player = new Player("Petya");
+
+        player.installGame(game1);
+        player.installGame(game2);
+
+        player.play(game1, 5);
+        player.play(game2, 5);
+
+
+        int expected = 0;
+        int actual = player.sumGenre("Головоломки");
 
         assertEquals(expected, actual);
 
@@ -160,7 +184,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void shouldSumGenredd() {
+    public void shouldGetSumGenre() {
         GameStore store = new GameStore();
         Game game = store.publishGame("Нетология Баттл Онлайн", "Аркады");
 
@@ -187,6 +211,5 @@ public class PlayerTest {
 
         assertEquals(expected, actual);
     }
-
 }
 

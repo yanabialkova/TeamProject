@@ -14,10 +14,15 @@ public class PlayerTest {
         player.installGame(game);
         player.play(game, 3);
 
+
         int expected = 0;
+
+        int expected = 3;
+
         int actual = player.sumGenre(game.getGenre());
         assertEquals(expected, actual);
     }
+
 
     @Test
     public void shouldShowMostPlayerByGenre() {
@@ -73,3 +78,4 @@ public class PlayerTest {
         assertEquals(expected, actual);
     }
 }
+

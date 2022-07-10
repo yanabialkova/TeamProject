@@ -4,12 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Player {
-
-
     private String name;
-
-    private String name;
-
 
     /** информация о том, в какую игру сколько часов было сыграно
      ключ - игра
@@ -47,10 +42,7 @@ public class Player {
     }
 
     /** Метод принимает жанр игры (одно из полей объекта игры) и
-
      суммирует время, проигранное во всей игры этого жанра этим игроком */
-
-     суммирует время, проигранное во все игры этого жанра этим игроком */
 
     public int sumGenre(String genre) {
         int sum = 0;

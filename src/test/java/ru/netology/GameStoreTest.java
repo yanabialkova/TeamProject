@@ -104,7 +104,7 @@ public class GameStoreTest {
 
         Game game1 = new Game("World of Tanks", "Аркады", store);
         Game game2 = new Game("World of Tanks", "Аркады", store);
-        Game game3 = new Game("Tetris", "Головоломки", store);
+        Game game3 = new Game("World of Tanks", "Головоломки", store);
 
         assertEquals(true, game1.equals(game2));
         assertEquals(false, game1.equals(game3));
@@ -117,7 +117,7 @@ public class GameStoreTest {
 
         Game game1 = new Game("Нетология Баттл Онлайн", "Аркады", store1);
         Game game2 = new Game("Нетология Баттл Онлайн", "Аркады", store1);
-        Game game3 = new Game("Double Dragon", "Аркады", store2);
+        Game game3 = new Game("Нетология Баттл Онлайн", "Аркады", store2);
 
         assertEquals(true, game1.equals(game2));
         assertEquals(false, game1.equals(game3));
